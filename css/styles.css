@@ -74,6 +74,14 @@ img {
   text-align: center;
 }
 
+.background-pattern {
+  background-color: #e5e5f7;
+  opacity: 0.9;
+  background-image:  repeating-linear-gradient(45deg, #caa533 25%, transparent 25%, transparent 75%, #caa533 75%, #caa533), repeating-linear-gradient(45deg, #caa533 25%, #e5e5f7 25%, #e5e5f7 75%, #caa533 75%, #caa533);
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+}
+
 /* Header */
 .header {
   border-bottom: 4px solid var(--border-color);
@@ -304,6 +312,14 @@ input:checked + .slider:before {
   animation: pixel-bounce 2s infinite;
 }
 
+.its-me-badge {
+  font-family: 'Comic Sans MS', 'Cursive', sans-serif; /* Casual font */
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--secondary-color); /* Use your theme's secondary color */
+  margin-top: 10px;
+}
+
 /* Pixel Dissolve Effect */
 .pixel-dissolve-container {
   position: relative;
@@ -508,7 +524,7 @@ section {
 }
 
 .experience-location {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   opacity: 0.7;
 }

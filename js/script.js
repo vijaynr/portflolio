@@ -205,7 +205,7 @@ function initContactForm() {
       const message = document.getElementById('message').value;
       
       
-      window.location.href = `mailto:vj.co.dev@gmail.coml?cc=${email}&subject=Website Contact by ${name}&body=${message}`;
+      window.location.href = `mailto:vj.co.dev@gmail.com?cc=${email}&subject=Website Contact by ${name}&body=${message}`;
       contactForm.reset();
     });
   }

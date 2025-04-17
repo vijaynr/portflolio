@@ -750,7 +750,7 @@ textarea.pixel-input {
 /* Footer */
 .footer {
   background-color: var(--border-color);
-  color: white;
+  color: var(--bg-color);
   padding: 2rem 0;
   text-align: center;
 }

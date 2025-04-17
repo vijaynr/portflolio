@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vijayasankar's</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">VIJAYASANKAR N R</a>
+        <nav class="nav-desktop">
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li>
+              <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle" />
+                <span class="slider"></span>
+              </label>
+            </li>
+          </ul>
+        </nav>
+        <div class="nav-mobile">
+          <label class="theme-switch">
+            <input type="checkbox" id="mobile-theme-toggle" />
+            <span class="slider"></span>
+          </label>
+          <button class="pixel-button menu-toggle">MENU</button>
+        </div>
+      </div>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#education">EDUCATION</a></li>
+          <li><a href="#experience">EXPERIENCE</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="glitch" data-text="SOFTWARE DEVELOPER">
+                SOFTWARE DEVELOPER
+              </h1>
+              <p>Building secure, stable and scallable web technologies</p>
+              <div class="hero-buttons">
+                <a href="#projects" class="pixel-button">VIEW PROJECTS</a>
+                <a href="#contact" class="pixel-button secondary">CONTACT ME</a>
+                <a href="docs/resume.pdf" class="pixel-button" download="Vijayasankar_Resume.pdf">DOWNLOAD RESUME</a>
+              </div>
+            </div>
+            <div class="hero-avatar">
+              <div class="pixel-dissolve-container">
+                <img
+                  src="images/me8bit.png"
+                  alt="this is me in 8bit"
+                  class="image-front"/>
+                <img 
+                  src="images/mehd.png"
+                  alt="this is me in hd"
+                  class="image-back"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alma Mater Section -->
+      <section id="education" class="education">
+        <div class="container">
+          <div class="section-header">
+            <h2>ALMA MATER</h2>
+            <div class="section-line"></div>
+            <p>Where I leveled up my knowledge</p>
+          </div>
+
+          <div class="education-grid">
+            <!-- Education cards will be dynamically inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="experience">
+        <div class="container">
+          <div class="section-header">
+            <h2>EXPERIENCE</h2>
+            <div class="section-line"></div>
+            <p>My professional quests and adventures</p>
+          </div>
+
+          <div class="experience-grid">
+            <!-- Experience items will be dynamically inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <div class="container">
+          <div class="section-header">
+            <h2>PROJECTS</h2>
+            <div class="section-line"></div>
+            <p>Check out my latest quests and missions</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project cards will be dynamically inserted here by JavaScript -->
+          </div>
+
+          <div class="text-center">
+            <button class="pixel-button">LOAD MORE PROJECTS</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <div class="container">
+          <div class="section-header">
+            <h2>SKILLS</h2>
+            <div class="section-line"></div>
+            <p>My character stats and abilities</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Skill bars will be dynamically inserted here by JavaScript -->
+          </div>
+
+          <div class="stats-grid">
+            <!-- Stats will be dynamically inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2>CONTACT</h2>
+            <div class="section-line"></div>
+            <p>Send me a message to start our collaboration</p>
+          </div>
+
+          <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">NAME</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="pixel-input"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="pixel-input"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">MESSAGE</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="pixel-input"
+                  placeholder="Type your message here"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="pixel-button">SEND MESSAGE</button>
+            </form>
+
+            <div class="contact-info">
+              <div class="pixel-card">
+                <h3>CONTACT INFO</h3>
+                <ul>
+                  <li>
+                    <span class="info-label">EMAIL:</span>
+                    <span class="info-value">vj.co.dev@gmail.com</span>
+                  </li>
+                  <li>
+                    <span class="info-label">LOCATION:</span>
+                    <span class="info-value">Bengaluru, Karnataka</span>
+                  </li>
+                  <li>
+                    <span class="info-label">AVAILABILITY:</span>
+                    <span class="info-value">Open for hire</span>
+                  </li>
+                </ul>
+
+                <div class="social-links">
+                  <a href="https://github.com/vijaynr" class="social-link">GitHub</a>
+                  <a href="https://www.linkedin.com/in/vijayasankarr" class="social-link">LinkedIn</a>
+                  <a href="https://x.com/vjaynr" class="social-link">X/Twitter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="footer-credit">Made with <span class="heart">♥</span></p>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

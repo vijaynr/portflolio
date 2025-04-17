@@ -3,15 +3,15 @@ const projects = [
   {
     title: "File Versioning in Filr",
     description: "Developed a feature that helps end-users to create and manage their file versions in Filr.",
-    category: "WORK",
-    link: "#",
+    category: "#WORK",
+    link: "https://youtu.be/EL-HXbGP1ts?si=V5vHBh1H_Ud20jh7",
     iconColor: "var(--secondary-color)",
   },
   {
     title: "CIS MacOS Kernel Extension",
     description: "Developed a kernel extension for macOS to detect and stop unnecessary downloads of archived files on network mounts.",
-    category: "WORK",
-    link: "#",
+    category: "#WORK",
+    link: "https://www.microfocus.com/documentation/open-enterprise-server/2023/cis_admin_lx/t4b3w08q8icu.html",
     iconColor: "var(--secondary-color)",
   },
 ];

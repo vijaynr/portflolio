@@ -1,17 +1,31 @@
 // Project data
 const projects = [
   {
-    title: "File Versioning",
-    description: "Developed a feature that helps end-users to create and manage their file versions in Filr.",
-    category: ["WORK", "OPENTEXT"],
-    link: "https://youtu.be/EL-HXbGP1ts?si=V5vHBh1H_Ud20jh7",
-    iconColor: "var(--secondary-color)",
-  },
-  {
-    title: "MacOS VFS Kernel Extension",
+    title: "Mac Kernel Extension",
     description: "Developed a kernel extension for macOS to detect and stop unnecessary downloads of archived files on network mounts.",
     category: ["WORK", "OPENTEXT"],
     link: "https://www.microfocus.com/documentation/open-enterprise-server/2023/cis_admin_lx/t4b3w08q8icu.html",
+    iconColor: "var(--secondary-color)",
+  },
+  {
+    title: "Multi Factor Authentication",
+    description: "The implementation of Multi-Factor Authentication uses the Backend for Frontend Proxy pattern and OAuth2. This approach provides a seamless experience for both confidential and public clients.",
+    category: ["WORK", "OPENTEXT"],
+    techStack: ["Java", "Spring"],
+    iconColor: "var(--secondary-color)",
+  },
+  {
+    title: "File Versioning",
+    description: "Flat file based versioning system that enables users to store, manage, and access various file versions, with the added capability of removing surplus and expired file versions based on configured policies.",
+    category: ["WORK", "OPENTEXT"],
+    techStack: ["Java", "Spring", "Angular"],
+    iconColor: "var(--secondary-color)",
+  },
+  {
+    title: "Thumbnail Previews",
+    description: "Generating and displaying thumbnails for documents, videos and CAD files in Filr.",
+    category: ["WORK", "OPENTEXT"],
+    techStack: ["Java", "AWT", "FFMPEG", "Angular"],
     iconColor: "var(--secondary-color)",
   },
 ];

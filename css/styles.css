@@ -50,6 +50,12 @@ h1, h2, h3, h4, .logo {
   font-family: 'Press Start 2P', cursive;
 }
 
+.project-description,
+.experience-description {
+  font-family: 'Roboto Mono', monospace;
+  font-size: small;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -484,61 +490,141 @@ section {
 
 /* Experience Section */
 .experience {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-color);
 }
 
+/* Timeline Layout for Experience Section */
+
+/* Update the central vertical line so it starts below the top square and ends above the bottom square */
+.experience-grid::before {
+  background-color: var(--primary-color);
+  content: "";
+  position: absolute;
+  top: 20px;    /* leave space at the top for the square block */
+  bottom: 20px; /* leave space at the bottom for the square block */
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+}
+
+/* Add square blocks on the top and bottom of the timeline using multiple background images */
 .experience-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
-  column-span: span 2;
-  margin-bottom: 3rem;
+  position: relative;
+  padding: 2rem 0;
+  overflow: auto;
+  /* 
+    The first background (top square) and second background (bottom square)
+    use a data URL for a 20x20svg rect. Here we use the hex color for var(--primary-color)
+    (default light theme value: #ff6b6b). Adjust if needed.
+  */
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E") no-repeat center top,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 20px 20px, 20px 20px;
+}
+
+/* Timeline Items */
+.experience-item {
+  width: 45%;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  background-color: var(--bg-color);
+  border: 4px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+/* Alternate positioning */
+.experience-item:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.experience-item:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+/* Circles on the timeline */
+.experience-item::after {
+  content: "";
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  border: 4px solid var(--primary-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.experience-item:nth-child(odd)::after {
+  right: -8px;
+}
+
+.experience-item:nth-child(even)::after {
+  left: -8px;
+}
+
+.experience-item:nth-child(odd) .experience-company-details {
+  justify-content: flex-end;
+}
+
+.experience-item:nth-child(even) .experience-company-details  {
+  justify-content: flex-start;
 }
 
 .experience-item {
-  border-left: 4px solid var(--secondary-color);
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.experience-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: -10px;
-  top: 0;
-  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .experience-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
-  color: var(--secondary-color);
+}
+
+.experience-company-details {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .experience-company {
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .experience-location {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.7;
-}
-
-.experience-period {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.7rem;
   margin-bottom: 0.5rem;
 }
 
-.experience-description {
-  font-size: 1rem;
-  line-height: 1.5;
+.experience-company::before {
+  content: "Company: ";
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.experience-location::before {
+  content: "Location: ";
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Hide the details section initially */
+.experience-details {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Expand the experience card on hover to reveal details */
+.experience-item:hover .experience-details {
+  max-height: 500px; /* Sufficiently high to reveal all content */
+  opacity: 1;
+  margin-top: 1rem;
 }
 
 /* Projects Section */
@@ -583,6 +669,7 @@ section {
 .project-title {
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  padding: 1rem 0;
   font-family: 'Press Start 2P', cursive;
 }
 
@@ -590,16 +677,50 @@ section {
   margin-bottom: 1rem;
 }
 
-.project-footer {
+.project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-items: center;
 }
 
 .project-category {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 0.6rem;
+  font-size: 1.1rem;
   color: var(--primary-color);
+}
+
+.project-tech-stack {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.project-tech-stack span {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+
+}
+
+.project-item {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Initially hide the project details */
+.project-details-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* On hover, expand the hidden project details */
+.project-item:hover .project-details-wrapper {
+  max-height: 500px; /* Adjust height as needed */
+  opacity: 1;
+  margin-bottom: 1rem;
 }
 
 

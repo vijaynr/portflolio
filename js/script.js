@@ -74,6 +74,22 @@ function initMobileMenu() {
   }
 }
 
+// Scroll Animations
+function initScrollAnimations() {
+  const experienceItems = document.querySelectorAll('.experience-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Once the item is visible, unobserve it for performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  experienceItems.forEach(item => observer.observe(item));
+}
+
 // Render Projects
 function renderProjects() {
   const projectsGrid = document.querySelector('.projects-grid');
@@ -81,13 +97,19 @@ function renderProjects() {
   if (projectsGrid && projects) {
     projects.forEach(project => {
       const projectCard = document.createElement('div');
-      projectCard.className = 'pixel-card';
+      projectCard.className = 'pixel-card project-item';
       
       projectCard.innerHTML = `
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-description">${project.description}</p>
-        <div class="project-footer">
-          <span class="project-category">${project.category}</span>
+        <div class="project-header">
+          <h3 class="project-title">${project.title}</h3>
+          <span class="project-category">${project.category ? project.category.join(', ') : ''}</span>
+        </div>
+        </div>
+        <div class="project-details-wrapper">
+          <p class="project-description">${project.description}</p>
+          <div class="project-tech-stack">
+            <span class="tech">${project.techStack ? project.techStack.join(', ') : ''}</span>
+          </div>
           <a href="${project.link}" class="pixel-button sm">VIEW PROJECT</a>
         </div>
       `;
@@ -150,7 +172,6 @@ function renderEducation() {
   }
 }
 
-// Render Experience
 function renderExperience() {
   const experienceGrid = document.querySelector('.experience-grid');
   
@@ -160,11 +181,17 @@ function renderExperience() {
       experienceItem.className = 'experience-item';
       
       experienceItem.innerHTML = `
-        <div class="experience-period">${exp.period}</div>
-        <h3 class="experience-title">${exp.title}</h3>
-        <div class="experience-company">${exp.company}</div>
-        <div class="experience-location">${exp.location}</div>
-        <p class="experience-description">${exp.description}</p>
+        <div class="experience-summary">
+          <div class="experience-period">${exp.period}</div>
+          <h3 class="experience-title">${exp.title}</h3>
+          <div class="experience-company-details">
+            <div class="experience-company">${exp.company}</div>
+            <div class="experience-location">${exp.location}</div>
+          </div
+        </div>
+        <div class="experience-details">
+          <p class="experience-description">${exp.description}</p>
+        </div>
       `;
       
       experienceGrid.appendChild(experienceItem);
@@ -209,26 +236,4 @@ function initContactForm() {
       contactForm.reset();
     });
   }
-}
-
-// Scroll Animations
-function initScrollAnimations() {
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return; // Skip empty links
-      
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
 }

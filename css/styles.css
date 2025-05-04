@@ -5,13 +5,13 @@
   --pixel-primary-light: #ff6b6b;
   --pixel-secondary-light: #4ecdc4;
   --pixel-border-light: #333333;
-  
+
   --pixel-bg-dark: #121212;
   --pixel-text-dark: #f5f5f5;
   --pixel-primary-dark: #ff6b6b;
   --pixel-secondary-dark: #4ecdc4;
   --pixel-border-dark: #f5f5f5;
-  
+
   /* Default to light theme */
   --bg-color: var(--pixel-bg-light);
   --text-color: var(--pixel-text-light);
@@ -37,7 +37,7 @@ body.dark-theme {
 }
 
 body {
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -46,13 +46,17 @@ body {
   font-size: 1.25rem;
 }
 
-h1, h2, h3, h4, .logo {
-  font-family: 'Press Start 2P', cursive;
+h1,
+h2,
+h3,
+h4,
+.logo {
+  font-family: "Press Start 2P", cursive;
 }
 
 .project-description,
 .experience-description {
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: small;
 }
 
@@ -83,7 +87,22 @@ img {
 .background-pattern {
   background-color: #e5e5f7;
   opacity: 0.9;
-  background-image:  repeating-linear-gradient(45deg, #caa533 25%, transparent 25%, transparent 75%, #caa533 75%, #caa533), repeating-linear-gradient(45deg, #caa533 25%, #e5e5f7 25%, #e5e5f7 75%, #caa533 75%, #caa533);
+  background-image: repeating-linear-gradient(
+      45deg,
+      #caa533 25%,
+      transparent 25%,
+      transparent 75%,
+      #caa533 75%,
+      #caa533
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #caa533 25%,
+      #e5e5f7 25%,
+      #e5e5f7 75%,
+      #caa533 75%,
+      #caa533
+    );
   background-position: 0 0, 8px 8px;
   background-size: 16px 16px;
 }
@@ -117,7 +136,7 @@ img {
 }
 
 .nav-desktop ul li a {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
   transition: color 0.3s;
 }
@@ -141,7 +160,7 @@ img {
 }
 
 .mobile-menu ul li a {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
   display: block;
   transition: color 0.3s;
@@ -195,7 +214,7 @@ input:checked + .slider:before {
 .pixel-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
   border: 4px solid var(--border-color);
   background-color: var(--primary-color);
@@ -319,7 +338,7 @@ input:checked + .slider:before {
 }
 
 .its-me-badge {
-  font-family: 'Comic Sans MS', 'Cursive', sans-serif; /* Casual font */
+  font-family: "Comic Sans MS", "Cursive", sans-serif; /* Casual font */
   font-style: italic;
   font-size: 1.2rem;
   color: var(--secondary-color); /* Use your theme's secondary color */
@@ -396,7 +415,8 @@ input:checked + .slider:before {
 }
 
 @keyframes pixel-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -460,7 +480,7 @@ section {
 }
 
 .education-degree {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
@@ -478,7 +498,7 @@ section {
 }
 
 .education-period {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.7rem;
   margin-bottom: 0.5rem;
 }
@@ -500,7 +520,7 @@ section {
   background-color: var(--primary-color);
   content: "";
   position: absolute;
-  top: 20px;    /* leave space at the top for the square block */
+  top: 20px; /* leave space at the top for the square block */
   bottom: 20px; /* leave space at the bottom for the square block */
   left: 50%;
   width: 4px;
@@ -517,9 +537,10 @@ section {
     use a data URL for a 20x20svg rect. Here we use the hex color for var(--primary-color)
     (default light theme value: #ff6b6b). Adjust if needed.
   */
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E") no-repeat center top,
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E") no-repeat center bottom;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E")
+      no-repeat center top,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Crect width='20' height='20' fill='%23ff6b6b'/%3E%3C/svg%3E")
+      no-repeat center bottom;
   background-size: 20px 20px, 20px 20px;
 }
 
@@ -572,7 +593,7 @@ section {
   justify-content: flex-end;
 }
 
-.experience-item:nth-child(even) .experience-company-details  {
+.experience-item:nth-child(even) .experience-company-details {
   justify-content: flex-start;
 }
 
@@ -670,7 +691,7 @@ section {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   padding: 1rem 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 .project-description {
@@ -699,7 +720,6 @@ section {
   margin-right: 0.5rem;
   font-size: 1.2rem;
   color: var(--primary-color);
-
 }
 
 .project-item {
@@ -723,8 +743,6 @@ section {
   margin-bottom: 1rem;
 }
 
-
-
 /* Skills Section */
 .skills {
   background-color: var(--bg-color);
@@ -745,7 +763,7 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.9rem;
 }
 
@@ -778,13 +796,13 @@ section {
 
 .stat-value {
   font-size: 2.5rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
 }
 
@@ -812,7 +830,7 @@ section {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
 }
 
@@ -822,7 +840,7 @@ section {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
   color: var(--text-color);
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 1.25rem;
 }
 
@@ -846,7 +864,7 @@ textarea.pixel-input {
 }
 
 .info-label {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.75rem;
   color: var(--primary-color);
 }
@@ -860,7 +878,7 @@ textarea.pixel-input {
   padding: 0.5rem 1rem;
   border: 2px solid var(--border-color);
   transition: all 0.3s;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.6rem;
 }
 
@@ -892,7 +910,8 @@ textarea.pixel-input {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -1000,5 +1019,46 @@ textarea.pixel-input {
 
   input:checked + .slider:before {
     transform: translateX(16px);
+  }
+
+  .project-details-wrapper,
+  .experience-details {
+    max-height: none !important;
+    opacity: 1 !important;
+    margin-top: 1rem;
+    transition: none !important;
+  }
+
+  .project-item:hover .project-details-wrapper,
+  .experience-item:hover .experience-details {
+    max-height: none;
+    opacity: 1;
+    transition: none;
+  }
+
+  .experience-item {
+    float: none;
+    width: 100%;
+    clear: both;
+  }
+
+  /* Alternate positioning */
+  .experience-item:nth-child(odd) {
+    float: none;
+    text-align: left;
+    clear: both;
+  }
+
+  .experience-item:nth-child(even) {
+    float: none;
+    text-align: left;
+    clear: both;
+  }
+  .experience-item:nth-child(odd) .experience-company-details {
+    justify-content: flex-start;
+  }
+
+  .experience-item:nth-child(even) .experience-company-details {
+    justify-content: flex-start;
   }
 }
